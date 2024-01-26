@@ -218,11 +218,9 @@ library strings {
                 if(shortest < 32) {
                   mask = ~(2 ** (8 * (32 - shortest + idx)) - 1);
                 }
-                unchecked {
-                    uint diff = (a & mask) - (b & mask);
-                    if (diff != 0)
-                        return int(diff);
-                }
+                uint diff = (a & mask) - (b & mask);
+                if (diff != 0)
+                    return int(diff);
             }
             selfptr += 32;
             otherptr += 32;
